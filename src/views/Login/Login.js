@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import {Button, Jumbotron} from 'react-bootstrap'
 import AuthService from '../../utils/AuthService'
 import styles from './Login.css'
+import Test from '../Test/Test'
 
 export class Login extends Component {
   static contextTypes = {
@@ -21,7 +22,7 @@ export class Login extends Component {
           <Button bsStyle="primary" onClick={auth.login.bind(this)}>Login</Button>
         </div>
         <Jumbotron>
-          <p>The components for the homepage go here (views/Login/Login.js)</p>
+          <Test/>
         </Jumbotron>
       </div>
     )
