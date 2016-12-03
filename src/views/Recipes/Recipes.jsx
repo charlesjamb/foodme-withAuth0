@@ -6,16 +6,16 @@ import IndividualRecipes from "./../IndividualRecipes/IndividualRecipes";
 var RecipeOutput = React.createClass({
     
     render: function() {
-        var recipesArray= this.props.recipes;
+        let recipesArray= this.props.recipes;
 
        return (
 
             <ul className="overlay">
-                {recipesArray.map((recipes, i) => 
+                {recipesArray.map((recipe, i) => 
                 <li key={i} className="recipe-list">
                     <IndividualRecipes 
                     className="recipes-list" 
-                    recipes={recipes}
+                    recipe={recipe}
                     saveUserRecipe={this.props.saveUserRecipe}
                     deleteSavedRecipe={this.props.deleteSavedRecipe}
                     />

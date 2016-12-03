@@ -12,13 +12,13 @@ const IndividualRecipes = React.createClass({
     },
     savedButtonClick: function() {
         if (!this.state.savedButton) {
-            this.props.saveUserRecipe(this.props.recipes.id);
+            this.props.saveUserRecipe(this.props.recipe.id);
             this.setState({
                 savedButton: true
             })
         }
         else {
-            this.props.deleteSavedRecipe(this.props.recipes.id)
+            this.props.deleteSavedRecipe(this.props.recipe.id)
             this.setState({
                 savedButton: false
             })
@@ -40,17 +40,17 @@ const IndividualRecipes = React.createClass({
                         <button id="save-button" onClick={this.savedButtonClick}><i id="favourite-button" className="material-icons 24md">star</i></button>
                         : <button id="save-button" onClick={this.savedButtonClick}><i id="favourite-button" className="material-icons 24md">star_border</i></button>
                     }
-                    <img src={this.props.recipes.image} alt="recipe representation"/>
+                    <img src={this.props.recipe.image} alt="recipe representation"/>
                 </div>
                 <div className="seperating-line">
                 </div>
-                <h2>{this.props.recipes.title}</h2>
+                <h2>{this.props.recipe.title}</h2>
              
                 <div id="read-more-wrapper">
                     <button className="button" onClick={this.open}>SHOW RECIPE</button>
                 </div>
                 <Modal show={this.state.showModal} onHide={this.close}>
-                    <ModalContent recipeId={this.props.recipes.id} title={this.props.recipes.title} image={this.props.recipes.image}
+                    <ModalContent recipeId={this.props.recipe.id} title={this.props.recipe.title} image={this.props.recipe.image}
                     servings/>
                     <Modal.Footer>
                         <Button className="button" onClick={this.close}>CLOSE</Button>

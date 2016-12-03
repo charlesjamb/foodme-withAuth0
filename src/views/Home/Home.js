@@ -47,6 +47,7 @@ export class Home extends Component {
 	}
 
 	componentDidMount() {
+		// this.getClientFridgeId();
 		this.displaySavedRecipe();
 	}
 
@@ -77,6 +78,8 @@ export class Home extends Component {
     
 	_handleButtonClick (userIngredientInput) {
 		let that = this;
+		console.log('fridgeId', this.state.fridgeId);
+		console.log('input', userIngredientInput);
 
 		axios.post(`http://foodme-backend.herokuapp.com/insert-into-fridge`, {
 			fridgeId: that.state.fridgeId,
@@ -157,6 +160,7 @@ export class Home extends Component {
 			}
 		})
 	}
+	
 	getClientFridgeId() {
 		let that = this;
 

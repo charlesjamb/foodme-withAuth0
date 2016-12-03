@@ -14,29 +14,29 @@ const IndividualSavedRecipe = React.createClass({
 	componentDidMount: function() {
 		this._getRecipes();
    	},
-   	open() {
-        this.setState({ showModal: true });
-    },
-    close() {
-        this.setState({ showModal: false });
-    },
-   _getRecipes: function() {
-		const self = this;
-		$.ajax({
-			url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${this.props.recipeId}/information/`,
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data) {
-			   self.setState({
-			       recipeInfo: data,
-			   });
-			},
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-Mashape-Authorization", "l1LBB0jz0wmshpT2AzWw4K1uUb6ep1oXuBdjsnQWcgGs9Iutw8");
-			}
-		});
-   	},
+ 	open() {
+      this.setState({ showModal: true });
+  },
+  close() {
+      this.setState({ showModal: false });
+  },
+ _getRecipes: function() {
+	const self = this;
+	$.ajax({
+		url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${this.props.recipeId}/information/`,
+		type: 'GET',
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+		   self.setState({
+		       recipeInfo: data,
+		   });
+		},
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("X-Mashape-Authorization", "l1LBB0jz0wmshpT2AzWw4K1uUb6ep1oXuBdjsnQWcgGs9Iutw8");
+		}
+	});
+ 	},
 
    	deleteSavedRecipe: function() {
       this.props.deleteSavedRecipe(this.props.recipeId);
