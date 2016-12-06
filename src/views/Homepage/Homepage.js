@@ -28,6 +28,30 @@ export class Homepage extends Component {
         <div className="content">
           <HomepageContent/>
         </div>
+        <footer className="footer">
+          <div className="footerContacts">
+            <p>Contacts</p>
+            <p>Email</p>
+            <p>FAQ</p>
+            <p>About</p>
+          </div>
+          <div className="icons">
+            <ul className="social-icons">
+              <a href="#" className="social-icon">
+                <li><i className="fa fa-facebook"></i></li>
+              </a>
+              <a href="#" className="social-icon">
+                <li><i className="fa fa-twitter"></i></li>
+              </a>
+              <a href="#" className="social-icon">
+                <li><i className="fa fa-instagram"></i></li>
+              </a>
+            </ul>
+          </div>
+          <div className="copyright">
+            <p>FoodMe© 2016</p>
+          </div>
+        </footer>
       </div>
     );
   }
