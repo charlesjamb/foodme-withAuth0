@@ -25,9 +25,11 @@ export class Homepage extends Component {
             <Button className="loginButton" bsStyle="primary" onClick={auth.login.bind(this)}>LOGIN</Button>
           </div>
         </header>
+
         <div className="content">
           <HomepageContent/>
         </div>
+        
         <footer className="footer">
           <div className="footerContacts">
             <p>Contacts</p>

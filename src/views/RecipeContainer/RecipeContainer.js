@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import axios from 'axios';
-import {key} from '../../utils/mashapeKey'
+import {key} from '../../utils/mashapeKey.js';
 
-export class RecipeContainer extends Component {
+class RecipeContainer extends Component {
 
-	constructor(props, context) {
-		super(props, context);
+	constructor(props) {
+		super(props);
 		this.state = {
 			recipes: []
 		};
 	}
 
-	_getRecipes(e) {
-		e.preventDefault();
-		axios.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=${this.props.ingredients.toString()}&number=24&ranking=2&limitLicense=true`, key)
+	_getRecipes() {
+		console.log('_getRecipes')
+		axios.defaults.headers.common['X-Mashape-Key'] = key;
+		axios.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?ingredients=${this.props.ingredients.toString()}&number=24&ranking=2&limitLicense=true`)
 		.then(data => {
-			console.log(data);
 			this.setState({
 				recipes: data
 			});
@@ -25,9 +25,30 @@ export class RecipeContainer extends Component {
 		})
 	}
 
+	componentDidMount() {
+		console.log('RecipeContainer mounts');
+	}
+
+	componentDidUpdate(prevProps) {
+		console.log('RecipeContainer updates');
+		if (prevProps.ingredients !== this.props.ingredients) {
+			this._getRecipes();
+		};
+	}
+
 	render() {
+		console.log('RecipeContainer ingredients ', this.props.ingredients);
+		console.log('RecipeContainer recipes', this.state.recipes);
 		return (
-			<p>Hello, world!</p>
+				<div>
+					<p>Hello, world!</p>
+				</div>
 		);
 	}
+}
+
+RecipeContainer.propTypes = {
+	ingredients: PropTypes.array
 };
+
+export default RecipeContainer;
