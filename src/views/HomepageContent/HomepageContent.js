@@ -1,11 +1,12 @@
-import './GetRecipe.css';
+import './HomepageContent.css';
 import {Button, Grid, Row, Col} from 'react-bootstrap';
 import Ingredient from './../IngredientHomepage/IngredientHomepage';
 import React from 'react';
 import $ from 'jquery';
 import RecipeObject from '../RecipeObject/RecipeObject';
+import RecipeContainer from '../RecipeContainer/RecipeContainer';
 
-var GetRecipe = React.createClass({
+var HomepageContent = React.createClass({
     getInitialState() {
         return {
             recipes: null,
@@ -43,8 +44,9 @@ var GetRecipe = React.createClass({
     },
     _handleButtonClick(e) {
         e.preventDefault();
-        var userIngredientInput = this.refs.userInput.value;
-        var ingredient = this.state.ingredients.concat(userIngredientInput);
+
+        let userIngredientInput = this.refs.userInput.value;
+        let ingredient = this.state.ingredients.concat(userIngredientInput);
         this.setState({
             ingredients: ingredient
         });
@@ -55,9 +57,7 @@ var GetRecipe = React.createClass({
         }
     },
     deleteIngredient(i, e) {
-        console.log(i);
         e.preventDefault();
-
 
         this.setState(state => {
             state.ingredients.splice(i, 1);
@@ -88,6 +88,7 @@ var GetRecipe = React.createClass({
                             )}
                         </div>
                     </form>
+                    
                     <Grid className="recipes-content">
                         <Row className="recipes-row">
                             <Col xs={12}>
@@ -143,4 +144,6 @@ var GetRecipe = React.createClass({
     }
 });
 
-module.exports = GetRecipe;
+module.exports = HomepageContent;
+
+// <RecipeContainer ingredients={this.state.ingredients}/>

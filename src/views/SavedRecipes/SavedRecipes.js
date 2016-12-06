@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 import './../Recipes/Recipes.css';
-import './../Home/Home.css'
+import './../Userpage/Userpage.css'
 import IndividualSavedRecipe from '../IndividualSavedRecipe/IndividualSavedRecipe.js';
 
 

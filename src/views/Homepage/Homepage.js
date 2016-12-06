@@ -1,11 +1,11 @@
 import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router';
 import {Button} from 'react-bootstrap';
 import AuthService from '../../utils/AuthService';
-import './Login.css';
-import GetRecipe from '../GetRecipe/GetRecipe';
-import { Link } from 'react-router';
+import './Homepage.css';
+import HomepageContent from '../HomepageContent/HomepageContent.js';
 
-export class Login extends Component {
+export class Homepage extends Component {
   static contextTypes = {
     router: PropTypes.object
   }
@@ -16,7 +16,7 @@ export class Login extends Component {
   }
 
   render() {
-    const { auth } = this.props;
+    const {auth} = this.props;
     return (
       <div className="page">
         <header className="header">
@@ -25,13 +25,13 @@ export class Login extends Component {
             <Button className="loginButton" bsStyle="primary" onClick={auth.login.bind(this)}>LOGIN</Button>
           </div>
         </header>
-        <div className="ingredients-recipes">
-          <GetRecipe/>
+        <div className="content">
+          <HomepageContent/>
         </div>
       </div>
     );
   }
 }
 
-export default Login;
+export default Homepage;
 

@@ -1,20 +1,22 @@
 import React, { PropTypes, Component } from 'react';
-import { Button, Jumbotron } from 'react-bootstrap';
 import AuthService from '../../utils/AuthService';
-import styles from './Home.css';
+
+import { Button, Jumbotron } from 'react-bootstrap';
+import Collapsible from 'react-collapsible';
+import styles from './Userpage.css';
 import grid from '../grid.css';
+
 import Fridge from './../Fridge/Fridge';
 import SavedRecipes from './../SavedRecipes/SavedRecipes';
 import QuickSearch from './../QuickSearch/QuickSearch';
 import Recipes from './../Recipes/Recipes';
-import Collapsible from 'react-collapsible';
 
 
 var axios = require('axios');
 var $ = require('jquery');
 
 
-export class Home extends Component {
+export class Userpage extends Component {
 
 	static contextTypes = {
 		router: PropTypes.object
@@ -315,5 +317,5 @@ export class Home extends Component {
 }
 
 
-export default Home;
+export default Userpage;
 

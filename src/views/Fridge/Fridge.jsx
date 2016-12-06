@@ -1,11 +1,11 @@
-var React = require('react');
-import './../Home/Home.css';
+import React from 'react';
+import './../Userpage/Userpage.css';
 import './../grid.css'
 
 import Ingredient from './../Ingredient/Ingredients';
 
 
-var Fridge = React.createClass({
+const Fridge = React.createClass({
     
     handleButtonClick: function(event) {
         event.preventDefault(); 

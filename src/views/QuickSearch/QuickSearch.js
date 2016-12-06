@@ -1,6 +1,6 @@
 import React from 'react';
 import QuickSearchIngredient from './../Ingredient/QuickSearchIngredient'
-import './../Home/Home.css';
+import './../Userpage/Userpage.css';
 
 const QuickSearch = React.createClass({
 	deleteQuickIngredient: function(i, event){
