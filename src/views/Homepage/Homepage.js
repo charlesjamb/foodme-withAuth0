@@ -5,7 +5,7 @@ import AuthService from '../../utils/AuthService';
 import './Homepage.css';
 import HomepageContent from '../HomepageContent/HomepageContent.js';
 
-export class Homepage extends Component {
+export default class Homepage extends Component {
   static contextTypes = {
     router: PropTypes.object
   }
@@ -58,6 +58,4 @@ export class Homepage extends Component {
     );
   }
 }
-
-export default Homepage;
 
